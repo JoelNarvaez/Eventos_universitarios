@@ -16,21 +16,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO:
-    // Actualmente se muestran TODOS los eventos.
-    //
-    // El alumno debe modificar esta parte para que:
-    //
-    // - Si categoriaSeleccionada == 'Todos':
-    //     se muestren todos los eventos.
-    //
-    // - Si se selecciona otra categoría:
-    //     solamente aparezcan los eventos de esa categoría.
-    //
-    // Pista:
-    // List.where(...).toList();
-
-    final eventosMostrados = eventos;
+    final eventosMostrados = categoriaSeleccionada == 'Todos'
+        ? eventos
+        : eventos
+            .where((evento) => evento['categoria'] == categoriaSeleccionada)
+            .toList();
 
     return Scaffold(
       appBar: AppBar(
