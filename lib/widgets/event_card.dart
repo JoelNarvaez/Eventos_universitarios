@@ -51,15 +51,17 @@ class EventCard extends StatelessWidget {
 
           // TODO 1:
           // Agregar al diseño la hora, el lugar y el cupo del evento.
-          //
-          // TODO 2:
-          // Agregar un botón que permita registrarse o marcar
-          // el evento como "Me interesa".
-          //
-          // El botón deberá ejecutar:
-          // onPressed();
 
-          const SizedBox(height: 8),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+            child: SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: onPressed,
+                child: const Text('Me interesa'),
+              ),
+            ),
+          ),
         ],
       ),
     );
