@@ -102,9 +102,13 @@ class _HomePageState extends State<HomePage> {
                         return EventCard(
                           evento: evento,
                           onPressed: () {
-                            // TODO:
-                            // Mostrar un SnackBar indicando el evento
-                            // seleccionado.
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  'Te registraste en "${evento['titulo']}"',
+                                ),
+                              ),
+                            );
                           },
                         );
                       },
