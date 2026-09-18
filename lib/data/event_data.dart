@@ -10,6 +10,7 @@ const List<String> categorias = [
   'Culturales',
   'Tecnología',
   'Talleres',
+  'Voluntariado',
 ];
 
 const List<Map<String, dynamic>> eventos = [
@@ -232,5 +233,35 @@ const List<Map<String, dynamic>> eventos = [
     'cupo': 100,
     'imagen':
         'https://images.unsplash.com/photo-1758270704262-ecc82b23dc37?w=900',
+  },
+  {
+    'titulo': 'Jornada de Reforestación Universitaria',
+    'categoria': 'Voluntariado',
+    'fecha': '27 de octubre',
+    'hora': '08:00',
+    'lugar': 'Vivero Universitario',
+    'cupo': 50,
+    'imagen':
+        'https://images.unsplash.com/photo-1787013303584-06b1b187a73e?w=900',
+  },
+  {
+    'titulo': 'Colecta de Donativos Solidaria',
+    'categoria': 'Voluntariado',
+    'fecha': '29 de octubre',
+    'hora': '10:00',
+    'lugar': 'Explanada Central',
+    'cupo': 100,
+    'imagen':
+        'https://images.unsplash.com/photo-1593113616828-6f22bca04804?w=900',
+  },
+  {
+    'titulo': 'Brigada Comunitaria de Limpieza',
+    'categoria': 'Voluntariado',
+    'fecha': '31 de octubre',
+    'hora': '09:00',
+    'lugar': 'Parque Cercano al Campus',
+    'cupo': 40,
+    'imagen':
+        'https://images.unsplash.com/photo-1758599669406-d5179ccefcb9?w=900',
   },
 ];
