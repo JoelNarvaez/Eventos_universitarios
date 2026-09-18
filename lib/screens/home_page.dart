@@ -201,38 +201,46 @@ class _HomePageState extends State<HomePage> {
                 else
                   SliverPadding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    sliver: SliverGrid(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: columnas,
-                        crossAxisSpacing: 12,
-                        mainAxisSpacing: 12,
-                        childAspectRatio: columnas == 1 ? 0.85 : 0.72,
-                      ),
-                      delegate: SliverChildBuilderDelegate((context, index) {
-                        final evento = eventosMostrados[index];
-                        final titulo = evento['titulo'] as String;
+                    sliver: SliverToBoxAdapter(
+                      /* GridView normal anidado (shrinkWrap + sin scroll propio)
+                         para poder usarlo dentro del CustomScrollView y que el
+                         footer siga apareciendo después de la última tarjeta */
+                      child: GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: eventosMostrados.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: columnas,
+                          crossAxisSpacing: 12,
+                          mainAxisSpacing: 12,
+                          childAspectRatio: columnas == 1 ? 0.85 : 0.72,
+                        ),
+                        itemBuilder: (context, index) {
+                          final evento = eventosMostrados[index];
+                          final titulo = evento['titulo'] as String;
 
-                        return EventCard(
-                          evento: evento,
-                          onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                content: Text('Te registraste en "$titulo"'),
-                              ),
-                            );
-                          },
-                          esFavorito: favoritos.contains(titulo),
-                          onToggleFavorito: () {
-                            setState(() {
-                              if (favoritos.contains(titulo)) {
-                                favoritos.remove(titulo);
-                              } else {
-                                favoritos.add(titulo);
-                              }
-                            });
-                          },
-                        );
-                      }, childCount: eventosMostrados.length),
+                          return EventCard(
+                            evento: evento,
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Te registraste en "$titulo"'),
+                                ),
+                              );
+                            },
+                            esFavorito: favoritos.contains(titulo),
+                            onToggleFavorito: () {
+                              setState(() {
+                                if (favoritos.contains(titulo)) {
+                                  favoritos.remove(titulo);
+                                } else {
+                                  favoritos.add(titulo);
+                                }
+                              });
+                            },
+                          );
+                        },
+                      ),
                     ),
                   ),
                 SliverPadding(
