@@ -61,8 +61,7 @@ const List<Map<String, dynamic>> eventos = [
     'hora': '11:00',
     'lugar': 'Galería Universitaria',
     'cupo': 60,
-    'imagen':
-        'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=900',
+    'imagen': 'https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=900',
   },
   {
     'titulo': 'Charla de Ciberseguridad',
@@ -71,8 +70,7 @@ const List<Map<String, dynamic>> eventos = [
     'hora': '13:00',
     'lugar': 'Sala Audiovisual',
     'cupo': 50,
-    'imagen':
-        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900',
+    'imagen': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=900',
   },
   {
     'titulo': 'Taller de Emprendimiento',
@@ -101,8 +99,7 @@ const List<Map<String, dynamic>> eventos = [
     'hora': '10:00',
     'lugar': 'Auditorio Central',
     'cupo': 150,
-    'imagen':
-        'https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=900',
+    'imagen': 'https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=900',
   },
   {
     'titulo': 'Torneo de Baloncesto Interfacultades',
@@ -161,8 +158,7 @@ const List<Map<String, dynamic>> eventos = [
     'hora': '16:00',
     'lugar': 'Cancha Universitaria',
     'cupo': 70,
-    'imagen':
-        'https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=900',
+    'imagen': 'https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=900',
   },
   {
     'titulo': 'Bootcamp de Programación',

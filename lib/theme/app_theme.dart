@@ -24,6 +24,8 @@ class AppTheme {
 
   static Color get textSecondary => _textSecondary;
 
+  static Color get primary => _primary;
+
   static ThemeData get lightTheme {
     final colorScheme = ColorScheme.fromSeed(
       seedColor: _primary,
@@ -44,15 +46,8 @@ class AppTheme {
           fontWeight: FontWeight.w600,
           color: _textPrimary,
         ),
-        bodyMedium: TextStyle(
-          fontSize: 14,
-          height: 1.3,
-          color: _textSecondary,
-        ),
-        labelLarge: TextStyle(
-          fontWeight: FontWeight.w600,
-          color: _textPrimary,
-        ),
+        bodyMedium: TextStyle(fontSize: 14, height: 1.3, color: _textSecondary),
+        labelLarge: TextStyle(fontWeight: FontWeight.w600, color: _textPrimary),
       ),
       appBarTheme: const AppBarTheme(
         backgroundColor: _background,
@@ -61,8 +56,9 @@ class AppTheme {
         centerTitle: false,
         titleTextStyle: TextStyle(
           color: _textPrimary,
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
+          fontSize: 22,
+          fontWeight: FontWeight.w800,
+          letterSpacing: -0.4,
         ),
       ),
       cardTheme: CardThemeData(
