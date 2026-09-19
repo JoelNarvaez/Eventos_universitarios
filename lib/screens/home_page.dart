@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: const EdgeInsets.all(6),
               decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Colors.white.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: const Icon(
@@ -69,7 +69,12 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(width: 10),
-            const Text('Campus Eventos'),
+            const Flexible(
+              child: Text(
+                'Campus Joel University',
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
           ],
         ),
         actions: [
@@ -91,11 +96,12 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: _maxContentWidth),
-            child: CustomScrollView(
-              slivers: [
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  sliver: SliverToBoxAdapter(
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                     child: Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(20),
@@ -140,10 +146,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                ),
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
-                  sliver: SliverToBoxAdapter(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                     child: TextField(
                       onChanged: (valor) => setState(() => busqueda = valor),
                       decoration: const InputDecoration(
@@ -154,10 +158,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                ),
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 0, 0),
-                  sliver: SliverToBoxAdapter(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 0, 0),
                     child: SizedBox(
                       height: 42,
                       child: ListView.builder(
@@ -179,32 +181,25 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                ),
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
-                  sliver: SliverToBoxAdapter(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 12),
                     child: Text(
                       'Eventos encontrados: ${eventosMostrados.length}',
                       style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ),
-                ),
-                if (eventosMostrados.isEmpty)
-                  const SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    sliver: SliverToBoxAdapter(
+                  if (eventosMostrados.isEmpty)
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16),
                       child: EmptyState(
                         mensaje: 'No encontramos eventos con ese filtro.',
                       ),
-                    ),
-                  )
-                else
-                  SliverPadding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    sliver: SliverToBoxAdapter(
-                      /* GridView normal anidado (shrinkWrap + sin scroll propio)
-                         para poder usarlo dentro del CustomScrollView y que el
-                         footer siga apareciendo después de la última tarjeta */
+                    )
+                  else
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      // GridView normal con shrinkWrap (sin scroll propio) para
+                      // vivir dentro del scroll único de la Column.
                       child: GridView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
@@ -242,16 +237,14 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                     ),
-                  ),
-                SliverPadding(
-                  padding: const EdgeInsets.fromLTRB(16, 32, 16, 20),
-                  sliver: SliverToBoxAdapter(
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 32, 16, 20),
                     child: Column(
                       children: [
                         const Divider(color: Color(0xFFE3E5E8)),
                         const SizedBox(height: 12),
                         Text(
-                          'Campus Eventos',
+                          'Campus Joel University',
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             color: Theme.of(context).colorScheme.primary,
@@ -268,8 +261,8 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

@@ -28,7 +28,7 @@ class CampusEventosApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Campus Eventos',
+      title: 'Campus Joel University',
       theme: AppTheme.lightTheme,
       scrollBehavior: _SinScrollbar(),
       home: const HomePage(),

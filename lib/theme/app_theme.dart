@@ -50,12 +50,12 @@ class AppTheme {
         labelLarge: TextStyle(fontWeight: FontWeight.w600, color: _textPrimary),
       ),
       appBarTheme: const AppBarTheme(
-        backgroundColor: _background,
-        foregroundColor: _textPrimary,
+        backgroundColor: _primary,
+        foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: false,
         titleTextStyle: TextStyle(
-          color: _textPrimary,
+          color: Colors.white,
           fontSize: 22,
           fontWeight: FontWeight.w800,
           letterSpacing: -0.4,

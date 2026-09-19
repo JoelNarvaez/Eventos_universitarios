@@ -168,7 +168,15 @@ class EventCard extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(12, 4, 12, 0),
-              child: Text('Cupo: ${evento['cupo']} lugares', style: estiloMeta),
+              child: Text(
+                'Cupo: ${evento['cupo']} lugares',
+                style: estiloMeta.copyWith(
+                  color: (evento['cupo'] as int) >= 100
+                      ? Colors.green.shade700
+                      : Colors.red.shade700,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(12, 10, 12, 12),
